@@ -27,7 +27,7 @@ EType Employee::getType() const { return EType::Usual; }
 void Employee::showInfo() const
 {
   std::cout << FIO << ", " << birthdate << ", " << post << ", " << education
-            << "," << salary;
+            << ", " << salary;
 }
 
 Leader* Employee::convertToLeader(Company* subdiv)

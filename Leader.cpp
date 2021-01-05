@@ -12,7 +12,7 @@ EType Leader::getType() const { return EType::Leader; }
 void Leader::showInfo() const
 {
   Employee::showInfo();
-  std::cout << ",";
+  std::cout << ", ";
   if (subdivision)
     std::cout << subdivision->getLabel();
   else
