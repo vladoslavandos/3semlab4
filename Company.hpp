@@ -13,7 +13,7 @@ class Leader;
 class Company
 {
   std::string label;
-  Container employees;
+  Container<Employee> employees;
   bool subdiv;
 
 public:
