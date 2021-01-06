@@ -29,11 +29,10 @@ void Leader::resetSubdiv(Company* subdivision_)
   subdivision = subdivision_;
 }
 
-Employee* Leaeder::convertToUsual()
+Employee* Leader::convertToUsual()
 {
   delete subdivision;
-  return new Employee(std::move(FIO), birthdate, std::move(post),
-                      std::move(education), salary);
+  return new Employee(*(Employee*)this);
 }
 
 
