@@ -35,7 +35,19 @@ Employee* Leader::convertToUsual()
   return new Employee(*(Employee*)this);
 }
 
+Leader* Leader::convertToLeader(Company* subdiv)
+{
+  throw std::logic_error(
+      "Error converting to leader. It is already that type.");
+}
 
-Leader* Leader::convertToLeader(Company* subdiv) {
-  throw std::logic_error("Error converting to leader. It is already that type.");
+std::string Leader::serialize() const
+{
+  std::stringstream ss;
+  ss << Employee::serialize();
+  if (!subdivision)
+    ss << "0;";
+  else
+    ss << subdivision->serialize();
+  return ss.str();
 }

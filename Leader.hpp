@@ -22,6 +22,7 @@ public:
   ~Leader();
 
   void showInfo() const override;
+  std::string serialize() const override;
   EType getType() const override;
   Company* getSubdiv() const;
   void resetSubdiv(Company* subdivision_);

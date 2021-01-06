@@ -46,3 +46,27 @@ void Company::show() const
     std::cout << "\n";
   }
 }
+
+std::string Company::serialize() const
+{
+  std::stringstream ss;
+  if (subdiv)
+  {
+    ss << label << ";" << employees.size() << ";";
+    for (auto& item : employees)
+      ss << item.first << ";";
+  }
+  else
+  {
+    ss << label << "\n";
+    for (auto& item : employees)
+      ss << item.first << ";" << item.second->serialize() << "\n";
+  }
+  return ss.str();
+}
+
+void Company::setLabel(std::string const& newlabel) { label = newlabel; }
+
+void Company::clear() {
+    employees.clear();
+}

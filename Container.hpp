@@ -29,6 +29,7 @@ public:
   Employee*& operator[](int code);
   Employee*& at(int code);
   Employee* at(int code) const;
+  void clear();
   class iterator : public std::iterator<std::random_access_iterator_tag,
                                         std::pair<int, Employee*>>
   {

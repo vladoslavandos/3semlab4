@@ -12,8 +12,8 @@
 
 enum class EType
 {
-  Usual,
-  Leader
+  Usual = 1,
+  Leader = 2
 };
 
 class Leader;
@@ -30,6 +30,7 @@ public:
   Employee(std::string const& FIO_, int birthdate_, std::string const& post_,
            std::string const& education_, int salary_);
   virtual void showInfo() const;
+  virtual std::string serialize() const;
   virtual EType getType() const;
   void setPost(std::string const& post_);
   std::string const& getPost() const;

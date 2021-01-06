@@ -152,10 +152,9 @@ Employee*& Container::operator[](int code)
   for (auto& keyval : *this)
     if (keyval.first == code)
       return keyval.second;
-  auto& tmp =
-      (items[csize++] = std::pair<int, Employee*>{code, nullptr}).second;
+  items[csize++] = std::pair<int, Employee*>{code, nullptr};
   sort();
-  return tmp;
+  return at(code);
 }
 Employee*& Container::at(int code)
 {
@@ -271,4 +270,11 @@ Container::const_iterator Container::find(int code) const
     if (it->first == code)
       break;
   return it;
+}
+
+void Container::clear()
+{
+  for (size_t i = 0; i < csize; i++)
+    delete items[i].second;
+  csize = 0;
 }

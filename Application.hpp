@@ -2,6 +2,7 @@
 #define APPLICATION_HPP
 
 #include "Company.hpp"
+#include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <sstream>
@@ -13,6 +14,7 @@ class Application
   Company comp;
 
 public:
+  Application();
   void Employ(int code, std::string const& FIO_, int birthdate_,
               std::string const& post_, std::string const& education_,
               int salary_);
@@ -24,6 +26,11 @@ public:
   void Fire(int code);
   void showSubDiv(std::string const& subdivlabel) const;
   void show() const;
+
+  void save(std::ofstream& file);
+  void open(std::ifstream& file);
+
+  Employee* getByCode(int code) const;
 };
 
 #endif // APPLICATION_HPP

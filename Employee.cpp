@@ -36,6 +36,15 @@ Leader* Employee::convertToLeader(Company* subdiv)
                     std::move(education), salary, subdiv);
 }
 
-Employee* Employee::convertToUsual() {
+Employee* Employee::convertToUsual()
+{
   throw std::logic_error("Error converting to usual. It is already that type.");
+}
+
+std::string Employee::serialize() const
+{
+  std::stringstream ss;
+  ss << FIO << ";" << birthdate << ";" << post << ";" << education << ";"
+     << salary << ";" << (int)getType() << ";";
+  return ss.str();
 }
