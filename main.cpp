@@ -22,6 +22,9 @@ int main(int argc, char const* argv[])
   std::ifstream ifile{"tab.csv"};
   app.open(ifile);
   ifile.close();
+  app.Fire(12);
+  app.showSubDiv("leader 13's subdiv");
+  std::cout << "\n";
   app.show();
   // Container a{{{12, new Employee{"12", 12, "post", "edu", 12000}},
   //              {1, new Employee{"1", 1, "post1", "educ", 35000}},

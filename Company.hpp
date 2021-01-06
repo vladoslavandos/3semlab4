@@ -1,10 +1,7 @@
 #ifndef COMPANY_HPP
 #define COMPANY_HPP
 
-// #include "Employee.hpp"
-// #include "Leader.hpp"
 #include "Container.hpp"
-#include <iomanip>
 #include <iostream>
 #include <sstream>
 #include <string>
