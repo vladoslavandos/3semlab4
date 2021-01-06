@@ -1,0 +1,29 @@
+#ifndef APPLICATION_HPP
+#define APPLICATION_HPP
+
+#include "Company.hpp"
+#include <iomanip>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
+
+class Application
+{
+  Company comp;
+
+public:
+  void Employ(int code, std::string const& FIO_, int birthdate_,
+              std::string const& post_, std::string const& education_,
+              int salary_);
+  void ChangePost(int code, std::string const& newpost_);
+  void Employ(int code, std::string const& FIO_, int birthdate_,
+              std::string const& post_, std::string const& education_,
+              int salary_, Company* subdiv);
+  void ChangePost(int code, std::string const& newpost_, Company* subdiv);
+  void Fire(int code);
+  void showSubDiv(std::string const& subdivlabel) const;
+  void show() const;
+};
+
+#endif // APPLICATION_HPP

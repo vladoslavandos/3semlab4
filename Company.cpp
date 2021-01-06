@@ -17,7 +17,14 @@ Company::~Company()
 
 void Company::add(int code, Employee* emp) { employees[code] = emp; }
 
-Employee* Company::find(int code) const { return employees.at(code); }
+Employee* Company::find(int code) const
+{
+  auto tmp = employees.find(code);
+  if (tmp != employees.end())
+    return tmp->second;
+  return nullptr;
+}
+Employee*& Company::get(int code) { return employees[code]; }
 Leader* Company::findBySubDivLabel(std::string const& label) const
 {
   for (auto& item : employees)
@@ -29,13 +36,13 @@ Leader* Company::findBySubDivLabel(std::string const& label) const
     }
   return nullptr;
 }
-void Company::remove(int code) {
-    delete employees.remove(code);
-}
-void Company::show() const {
-    for(auto& item: employees) {
-        std::cout << item.first << " : ";
-        item.second->showInfo();
-        std::cout << "\n";
-    }
+void Company::remove(int code) { delete employees.remove(code); }
+void Company::show() const
+{
+  for (auto& item : employees)
+  {
+    std::cout << item.first << " : ";
+    item.second->showInfo();
+    std::cout << "\n";
+  }
 }

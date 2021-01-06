@@ -26,11 +26,9 @@ public:
   size_t capacity() const;
   void push_back(std::pair<int, Employee*> item);
   Employee* remove(int code);
-  Employee*& operator[](size_t code);
-  Employee*& at(size_t code);
-  Employee* at(size_t code) const;
-
-
+  Employee*& operator[](int code);
+  Employee*& at(int code);
+  Employee* at(int code) const;
   class iterator : public std::iterator<std::random_access_iterator_tag,
                                         std::pair<int, Employee*>>
   {
@@ -90,6 +88,9 @@ public:
   iterator end();
   const_iterator begin() const;
   const_iterator end() const;
+
+  iterator find(int code);
+  const_iterator find(int code) const;
   void sort();
 };
 

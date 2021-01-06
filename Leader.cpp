@@ -22,3 +22,21 @@ void Leader::showInfo() const
 Leader::~Leader() { delete subdivision; }
 
 Company* Leader::getSubdiv() const { return subdivision; }
+
+void Leader::resetSubdiv(Company* subdivision_)
+{
+  delete subdivision;
+  subdivision = subdivision_;
+}
+
+Employee* Leaeder::convertToUsual()
+{
+  delete subdivision;
+  return new Employee(std::move(FIO), birthdate, std::move(post),
+                      std::move(education), salary);
+}
+
+
+Leader* Leader::convertToLeader(Company* subdiv) {
+  throw std::logic_error("Error converting to leader. It is already that type.");
+}

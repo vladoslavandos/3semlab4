@@ -35,3 +35,7 @@ Leader* Employee::convertToLeader(Company* subdiv)
   return new Leader(std::move(FIO), birthdate, std::move(post),
                     std::move(education), salary, subdiv);
 }
+
+Employee* Employee::convertToUsual() {
+  throw std::logic_error("Error converting to usual. It is already that type.");
+}

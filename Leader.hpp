@@ -24,6 +24,9 @@ public:
   void showInfo() const override;
   EType getType() const override;
   Company* getSubdiv() const;
+  void resetSubdiv(Company* subdivision_);
+  Leader* convertToLeader(Company* subdiv) override;
+  Employee* convertToUsual() override;
 };
 
 // Leader a{"FIO", 1, "asd", "3", 2, nullptr};

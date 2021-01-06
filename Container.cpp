@@ -147,23 +147,24 @@ typename Container::const_iterator Container::end() const
   return const_iterator(items + csize);
 }
 
-Employee*& Container::operator[](size_t code)
+Employee*& Container::operator[](int code)
 {
   for (auto& keyval : *this)
     if (keyval.first == code)
       return keyval.second;
-  auto &tmp = (items[csize++] = std::pair<int, Employee*>{code, nullptr}).second;
+  auto& tmp =
+      (items[csize++] = std::pair<int, Employee*>{code, nullptr}).second;
   sort();
   return tmp;
 }
-Employee*& Container::at(size_t code)
+Employee*& Container::at(int code)
 {
   for (auto& keyval : *this)
     if (keyval.first == code)
       return keyval.second;
   throw std::runtime_error("Code was not found!");
 }
-Employee* Container::at(size_t code) const
+Employee* Container::at(int code) const
 {
   for (auto& keyval : *this)
     if (keyval.first == code)
@@ -171,7 +172,8 @@ Employee* Container::at(size_t code) const
   throw std::runtime_error("Code was not found!");
 }
 
-Container::const_iterator::const_iterator(std::pair<int, Employee*> const* aitem)
+Container::const_iterator::const_iterator(
+    std::pair<int, Employee*> const* aitem)
     : item{aitem}
 {
 }
@@ -252,4 +254,21 @@ std::strong_ordering operator<=>(Container::const_iterator const& lhs,
                                  Container::const_iterator const& rhs)
 {
   return lhs.item <=> rhs.item;
+}
+
+Container::iterator Container::find(int code)
+{
+  auto it = begin();
+  for (; it != end(); ++it)
+    if (it->first == code)
+      break;
+  return it;
+}
+Container::const_iterator Container::find(int code) const
+{
+  auto it = begin();
+  for (; it != end(); ++it)
+    if (it->first == code)
+      break;
+  return it;
 }

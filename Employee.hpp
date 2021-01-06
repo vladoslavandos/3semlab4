@@ -35,7 +35,8 @@ public:
   std::string const& getPost() const;
   void setSalary(int salary_);
   int getSalary() const;
-  Leader* convertToLeader(Company* subdiv);
+  virtual Leader* convertToLeader(Company* subdiv);
+  virtual Employee* convertToUsual();
   virtual ~Employee() = default;
 };
 
