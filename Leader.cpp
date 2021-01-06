@@ -18,3 +18,7 @@ void Leader::showInfo() const
   else
     std::cout << "Empty";
 }
+
+Leader::~Leader() { delete subdivision; }
+
+Company* Leader::getSubdiv() const { return subdivision; }

@@ -32,8 +32,6 @@ void Employee::showInfo() const
 
 Leader* Employee::convertToLeader(Company* subdiv)
 {
-  // Leader *ret = new Leader;
-  // *(Employee*)ret = std::move(*this);
   return new Leader(std::move(FIO), birthdate, std::move(post),
                     std::move(education), salary, subdiv);
 }

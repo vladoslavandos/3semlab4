@@ -138,3 +138,118 @@ typename Container::iterator Container::end()
 {
   return iterator(items + csize);
 }
+typename Container::const_iterator Container::begin() const
+{
+  return const_iterator(items);
+}
+typename Container::const_iterator Container::end() const
+{
+  return const_iterator(items + csize);
+}
+
+Employee*& Container::operator[](size_t code)
+{
+  for (auto& keyval : *this)
+    if (keyval.first == code)
+      return keyval.second;
+  auto &tmp = (items[csize++] = std::pair<int, Employee*>{code, nullptr}).second;
+  sort();
+  return tmp;
+}
+Employee*& Container::at(size_t code)
+{
+  for (auto& keyval : *this)
+    if (keyval.first == code)
+      return keyval.second;
+  throw std::runtime_error("Code was not found!");
+}
+Employee* Container::at(size_t code) const
+{
+  for (auto& keyval : *this)
+    if (keyval.first == code)
+      return keyval.second;
+  throw std::runtime_error("Code was not found!");
+}
+
+Container::const_iterator::const_iterator(std::pair<int, Employee*> const* aitem)
+    : item{aitem}
+{
+}
+Container::const_iterator::const_iterator(const_iterator const& other)
+    : item{other.item}
+{
+}
+Container::const_iterator::const_iterator(const_iterator&& other)
+    : item{std::move(other.item)}
+{
+}
+Container::const_iterator& Container::const_iterator::operator++()
+{
+  item++;
+  return *this;
+}
+Container::const_iterator& Container::const_iterator::operator--()
+{
+  item--;
+  return *this;
+}
+Container::const_iterator Container::const_iterator::operator++(int)
+{
+  auto tmp = const_iterator(*this);
+  item++;
+  return std::move(tmp);
+}
+Container::const_iterator Container::const_iterator::operator--(int)
+{
+  auto tmp = const_iterator(*this);
+  item--;
+  return std::move(tmp);
+}
+std::pair<int, Employee*> const& Container::const_iterator::operator*() const
+{
+  return *item;
+}
+std::pair<int, Employee*> const* Container::const_iterator::operator->() const
+{
+  return item;
+}
+Container::const_iterator
+Container::const_iterator::operator+(size_t offset) const
+{
+  return const_iterator{item + offset};
+}
+Container::const_iterator
+Container::const_iterator::operator-(size_t offset) const
+{
+  return const_iterator{item - offset};
+}
+
+std::ptrdiff_t
+Container::const_iterator::operator-(const_iterator const& other) const
+{
+  return item - other.item;
+}
+
+Container::const_iterator&
+Container::const_iterator::operator=(const_iterator const& other)
+{
+  item = other.item;
+  return *this;
+}
+Container::const_iterator&
+Container::const_iterator::operator=(const_iterator&& other)
+{
+  item = other.item;
+  return *this;
+}
+
+bool operator==(Container::const_iterator const& lhs,
+                Container::const_iterator const& rhs)
+{
+  return lhs.item == rhs.item;
+}
+std::strong_ordering operator<=>(Container::const_iterator const& lhs,
+                                 Container::const_iterator const& rhs)
+{
+  return lhs.item <=> rhs.item;
+}

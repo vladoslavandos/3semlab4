@@ -26,6 +26,10 @@ public:
   size_t capacity() const;
   void push_back(std::pair<int, Employee*> item);
   Employee* remove(int code);
+  Employee*& operator[](size_t code);
+  Employee*& at(size_t code);
+  Employee* at(size_t code) const;
+
 
   class iterator : public std::iterator<std::random_access_iterator_tag,
                                         std::pair<int, Employee*>>
@@ -54,8 +58,38 @@ public:
                                             iterator const& rhs);
   };
 
+  class const_iterator : public std::iterator<std::random_access_iterator_tag,
+                                              std::pair<int, Employee*>>
+  {
+  private:
+    std::pair<int, Employee*> const* item;
+    const_iterator(std::pair<int, Employee*> const* aitem);
+    friend class Container;
+
+  public:
+    const_iterator(const_iterator const& other);
+    const_iterator(const_iterator&& other);
+    const_iterator& operator=(const_iterator const& other);
+    const_iterator& operator=(const_iterator&& other);
+    const_iterator& operator++();
+    const_iterator& operator--();
+    const_iterator operator++(int);
+    const_iterator operator--(int);
+    std::pair<int, Employee*> const& operator*() const;
+    std::pair<int, Employee*> const* operator->() const;
+    const_iterator operator+(size_t offset) const;
+    const_iterator operator-(size_t offset) const;
+    std::ptrdiff_t operator-(const_iterator const& other) const;
+    friend bool operator==(const_iterator const& lhs,
+                           const_iterator const& rhs);
+    friend std::strong_ordering operator<=>(const_iterator const& lhs,
+                                            const_iterator const& rhs);
+  };
+
   iterator begin();
   iterator end();
+  const_iterator begin() const;
+  const_iterator end() const;
   void sort();
 };
 

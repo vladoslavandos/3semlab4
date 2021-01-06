@@ -24,6 +24,11 @@ public:
           std::vector<std::pair<int, Employee*>> const& empls = {},
           bool is_Subdivision = false);
   std::string const& getLabel() const;
+  void add(int code, Employee* emp);
+  Employee* find(int code) const;
+  Leader* findBySubDivLabel(std::string const& label) const;
+  void remove(int code);
+  void show() const;
   ~Company();
 };
 

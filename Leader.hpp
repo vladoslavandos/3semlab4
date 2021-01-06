@@ -19,9 +19,11 @@ public:
   inline Leader() : subdivision{nullptr} {};
   Leader(std::string const& FIO_, int birthdate_, std::string const& post_,
          std::string const& education_, int salary_, Company* subdivision_);
+  ~Leader();
 
   void showInfo() const override;
   EType getType() const override;
+  Company* getSubdiv() const;
 };
 
 // Leader a{"FIO", 1, "asd", "3", 2, nullptr};
