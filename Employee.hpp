@@ -34,6 +34,7 @@ public:
   virtual EType getType() const;
   void setPost(std::string const& post_);
   std::string const& getPost() const;
+  std::string const& getFIO() const;
   void setSalary(int salary_);
   int getSalary() const;
   virtual Leader* convertToLeader(Company* subdiv);

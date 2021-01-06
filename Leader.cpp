@@ -13,8 +13,11 @@ void Leader::showInfo() const
 {
   Employee::showInfo();
   std::cout << ", ";
-  if (subdivision)
-    std::cout << subdivision->getLabel();
+  if (subdivision) {
+    std::cout << subdivision->getLabel() << " -> (  ";
+    getSubdiv()->show();
+    std::cout << ")";
+  }
   else
     std::cout << "Empty";
 }

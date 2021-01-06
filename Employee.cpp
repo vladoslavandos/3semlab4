@@ -10,6 +10,7 @@ Employee::Employee(std::string const& FIO_, int birthdate_,
 }
 
 std::string const& Employee::getPost() const { return post; }
+std::string const& Employee::getFIO() const { return FIO; }
 
 void Employee::setPost(std::string const& post_) { post = post_; }
 

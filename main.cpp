@@ -7,8 +7,8 @@
 int main(int argc, char const* argv[])
 {
   Application app;
-  app.Employ(12, "12", 12, "post", "edu", 12000);
-  app.Employ(1, "1", 1, "post1", "educ", 35000);
+  app.Employ(12, "name12", 12, "post", "edu", 12000);
+  app.Employ(1, "name1", 1, "post1", "educ", 35000);
   app.Employ(13, "leader", 13, "ExecDirector", "edu", 1000000,
              new Company{"leader 13's subdiv", {{1, app.getByCode(1)}}, true});
   app.Employ(2, "le2", 2, "Leader2", "educat", 150000,

@@ -39,12 +39,18 @@ Leader* Company::findBySubDivLabel(std::string const& label) const
 void Company::remove(int code) { delete employees.remove(code); }
 void Company::show() const
 {
-  for (auto& item : employees)
+  if (subdiv)
   {
-    std::cout << item.first << " : ";
-    item.second->showInfo();
-    std::cout << "\n";
+    for (auto& item : employees)
+      std::cout << item.first << "(" << item.second->getFIO() << ")  ";
   }
+  else
+    for (auto& item : employees)
+    {
+      std::cout << item.first << " : ";
+      item.second->showInfo();
+      std::cout << "\n";
+    }
 }
 
 std::string Company::serialize() const
@@ -67,6 +73,4 @@ std::string Company::serialize() const
 
 void Company::setLabel(std::string const& newlabel) { label = newlabel; }
 
-void Company::clear() {
-    employees.clear();
-}
+void Company::clear() { employees.clear(); }
