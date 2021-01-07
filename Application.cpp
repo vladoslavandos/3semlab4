@@ -75,6 +75,8 @@ void Application::show() const { comp.show(); }
 void Application::save(std::ofstream& file) { file << comp.serialize(); }
 void Application::open(std::ifstream& file)
 {
+  if(file.fail())
+    throw std::runtime_error("File is corrupted of couldn't be found.");
   comp.clear();
   std::vector<std::pair<int, std::vector<int>>> subdivs;
   std::string label;
