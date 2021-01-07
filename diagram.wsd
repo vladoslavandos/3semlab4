@@ -1,0 +1,80 @@
+@startuml Company
+class Employee {
+  -FIO
+  -post
+  -education
+  -birthdate
+  -salary
+
+  +virtual void showInfo() const;
+  +virtual std::string serialize() const;
+  +virtual EType getType() const;
+  +void setPost(std::string const& post_);
+  +std::string const& getPost() const;
+  +std::string const& getFIO() const;
+  +void setSalary(int salary_);
+  +int getSalary() const;
+  +virtual Leader* convertToLeader(Company* subdiv);
+  +virtual Employee* convertToUsual();
+}
+
+enum EType {
+  Usual = 1
+  Leader = 2
+}
+
+class Leader {
+  -Company* subdivision
+  +void showInfo() const override
+  +std::string serialize() const override
+  +EType getType() const override
+  +Company* getSubdiv() const
+  +void resetSubdiv(Company* subdivision_)
+  +Leader* convertToLeader(Company* subdiv) override
+  +Employee* convertToUsual() override
+}
+
+Leader --|> Employee
+
+class Company {
+  -label
+  -Container employees
+  +std::string const& getLabel() const
+  +void setLabel(std::string const&)
+  +void add(int code, Employee* emp)
+  +Employee* find(int code) const
+  +Leader* findBySubDivLabel(std::string const& label) const
+  +Employee*& get(int code)
+  +void remove(int code)
+  +void show() const
+  +std::string serialize() const
+  +void clear()
+}
+
+class Container {
+  -TemplateType* items
+  -csize
+  +access operators and methods
+}
+
+class Container::iterator {
+  -item pointer
+  +dereferensing operator
+  +offset operators
+  +comparison operators
+}
+
+class Application {
+  Company comp
+  +void Employ(int code, initializers...)
+  +void ChangePost(int code, newpost)
+  +void Fire(int code)
+  +void showSubDiv(std::string const& subdivlabel) const
+  +void show() const
+  +void save(std::ofstream& file)
+  +void open(std::ifstream& file)
+}
+
+Container::iterator -> Container
+
+@endeml
