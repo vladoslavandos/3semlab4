@@ -60,7 +60,7 @@ public:
       auto newsize  = memsize * 2;
       auto tmpitems = new pair_type[newsize];
       std::move(items, items + csize, tmpitems);
-      delete items;
+      delete[] items;
       items   = tmpitems;
       memsize = newsize;
     }
