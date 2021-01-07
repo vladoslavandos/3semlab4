@@ -1,0 +1,55 @@
+\hypertarget{classLeader}{}\doxysection{Leader Class Reference}
+\label{classLeader}\index{Leader@{Leader}}
+
+
+Inheritance diagram for Leader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classLeader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Leader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=145pt]{classLeader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLeader_a906e46355c378db0add76db24345cf01}\label{classLeader_a906e46355c378db0add76db24345cf01}} 
+{\bfseries Leader} (std\+::string const \&F\+I\+O\+\_\+, int birthdate\+\_\+, std\+::string const \&post\+\_\+, std\+::string const \&education\+\_\+, int salary\+\_\+, \mbox{\hyperlink{classCompany}{Company}} $\ast$subdivision\+\_\+)
+\item 
+\mbox{\Hypertarget{classLeader_ace42a1c38f3fd203494c2fa9999a67bb}\label{classLeader_ace42a1c38f3fd203494c2fa9999a67bb}} 
+void {\bfseries show\+Info} () const override
+\item 
+\mbox{\Hypertarget{classLeader_aca4a1ce76c5654866d938b79599ce17e}\label{classLeader_aca4a1ce76c5654866d938b79599ce17e}} 
+std\+::string {\bfseries serialize} () const override
+\item 
+\mbox{\Hypertarget{classLeader_a3d2c422be0e05bb68803f4c08ce30568}\label{classLeader_a3d2c422be0e05bb68803f4c08ce30568}} 
+E\+Type {\bfseries get\+Type} () const override
+\item 
+\mbox{\Hypertarget{classLeader_ad576c7818b59b0fd74673e9c8ef185a1}\label{classLeader_ad576c7818b59b0fd74673e9c8ef185a1}} 
+\mbox{\hyperlink{classCompany}{Company}} $\ast$ {\bfseries get\+Subdiv} () const
+\item 
+\mbox{\Hypertarget{classLeader_afebcd6736b370956b6f9e2923f65133e}\label{classLeader_afebcd6736b370956b6f9e2923f65133e}} 
+void {\bfseries reset\+Subdiv} (\mbox{\hyperlink{classCompany}{Company}} $\ast$subdivision\+\_\+)
+\item 
+\mbox{\Hypertarget{classLeader_a871e6bf7c4741c3e87c5555076eb9e2d}\label{classLeader_a871e6bf7c4741c3e87c5555076eb9e2d}} 
+\mbox{\hyperlink{classLeader}{Leader}} $\ast$ {\bfseries convert\+To\+Leader} (\mbox{\hyperlink{classCompany}{Company}} $\ast$subdiv) override
+\item 
+\mbox{\Hypertarget{classLeader_ad54cc3127969db54ee00dc672f12287e}\label{classLeader_ad54cc3127969db54ee00dc672f12287e}} 
+\mbox{\hyperlink{classEmployee}{Employee}} $\ast$ {\bfseries convert\+To\+Usual} () override
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Leader.\+hpp\item 
+Leader.\+cpp\end{DoxyCompactItemize}

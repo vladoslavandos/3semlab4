@@ -1,0 +1,228 @@
+\hypertarget{classCompany}{}\doxysection{Company Class Reference}
+\label{classCompany}\index{Company@{Company}}
+
+
+\mbox{\hyperlink{classCompany}{Company}} describer class.  
+
+
+
+
+{\ttfamily \#include $<$Company.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCompany_a3b2dea202e5536eae0c4b06abb3fab0c}{Company}} (std\+::string const \&label\+\_\+, std\+::vector$<$ std\+::pair$<$ int, \mbox{\hyperlink{classEmployee}{Employee}} $\ast$ $>$$>$ const \&empls=\{\}, bool is\+\_\+\+Subdivision=false)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classCompany}{Company}} object. \end{DoxyCompactList}\item 
+std\+::string const  \& \mbox{\hyperlink{classCompany_a93f5ac8caf5531c4c7dad35643077e29}{get\+Label}} () const
+\begin{DoxyCompactList}\small\item\em Get the Label of company. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompany_ad5e493129658a67672dc810ef1743a03}{set\+Label}} (std\+::string const \&)
+\begin{DoxyCompactList}\small\item\em Set the Label of company. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompany_a972d769b2411473a02ffa0e70a45b50b}{add}} (int code, \mbox{\hyperlink{classEmployee}{Employee}} $\ast$emp)
+\begin{DoxyCompactList}\small\item\em Add new employee to company. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEmployee}{Employee}} $\ast$ \mbox{\hyperlink{classCompany_a320d05f22447c1fce0ccd80027310e68}{find}} (int code) const
+\begin{DoxyCompactList}\small\item\em Find an employee by his id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLeader}{Leader}} $\ast$ \mbox{\hyperlink{classCompany_a11f134e71efa1f6d16377f722c672f20}{find\+By\+Sub\+Div\+Label}} (std\+::string const \&label) const
+\begin{DoxyCompactList}\small\item\em Find subdivision by its label. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEmployee}{Employee}} $\ast$\& \mbox{\hyperlink{classCompany_a6ce2daeb1921f6707d53116e3c37e2c0}{get}} (int code)
+\begin{DoxyCompactList}\small\item\em Get an emloyee pointer reference differs from find~\newline
+ throws an exception if employee with such a code was not found in table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompany_a34856f6146f97bd3f7a751ba587948ed}{remove}} (int code)
+\begin{DoxyCompactList}\small\item\em Remove employee from table by his id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompany_ae2311c9b7b429b1443de03405d4c4f05}{show}} () const
+\begin{DoxyCompactList}\small\item\em Prints the entire table to std\+::cout. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCompany_af2bf2fcc4c0dfcb369b6967303af0f22}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em serializes company to make it writable to file for example \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCompany_a1be1faf99250a1a2b3bf439f7ff07b2d}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Removes all employees from table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCompany_a61c2a9ec178e683310583ef15635b53c}{$\sim$\+Company}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classCompany}{Company}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCompany}{Company}} describer class. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCompany_a3b2dea202e5536eae0c4b06abb3fab0c}\label{classCompany_a3b2dea202e5536eae0c4b06abb3fab0c}} 
+\index{Company@{Company}!Company@{Company}}
+\index{Company@{Company}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{Company()}{Company()}}
+{\footnotesize\ttfamily Company\+::\+Company (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{label\+\_\+,  }\item[{std\+::vector$<$ std\+::pair$<$ int, \mbox{\hyperlink{classEmployee}{Employee}} $\ast$ $>$$>$ const \&}]{empls = {\ttfamily \{\}},  }\item[{bool}]{is\+\_\+\+Subdivision = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classCompany}{Company}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label\+\_\+} & \\
+\hline
+{\em empls} & \\
+\hline
+{\em is\+\_\+\+Subdivision} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCompany_a61c2a9ec178e683310583ef15635b53c}\label{classCompany_a61c2a9ec178e683310583ef15635b53c}} 
+\index{Company@{Company}!````~Company@{$\sim$Company}}
+\index{````~Company@{$\sim$Company}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{$\sim$Company()}{~Company()}}
+{\footnotesize\ttfamily Company\+::$\sim$\+Company (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classCompany}{Company}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCompany_a972d769b2411473a02ffa0e70a45b50b}\label{classCompany_a972d769b2411473a02ffa0e70a45b50b}} 
+\index{Company@{Company}!add@{add}}
+\index{add@{add}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Company\+::add (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classEmployee}{Employee}} $\ast$}]{emp }\end{DoxyParamCaption})}
+
+
+
+Add new employee to company. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & unique indentifier of employee \\
+\hline
+{\em emp} & a pointer to employee\textquotesingle{}s object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCompany_a1be1faf99250a1a2b3bf439f7ff07b2d}\label{classCompany_a1be1faf99250a1a2b3bf439f7ff07b2d}} 
+\index{Company@{Company}!clear@{clear}}
+\index{clear@{clear}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Company\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Removes all employees from table. 
+
+\mbox{\Hypertarget{classCompany_a320d05f22447c1fce0ccd80027310e68}\label{classCompany_a320d05f22447c1fce0ccd80027310e68}} 
+\index{Company@{Company}!find@{find}}
+\index{find@{find}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} $\ast$ Company\+::find (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption}) const}
+
+
+
+Find an employee by his id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & unique indentifier of employee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Employee$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCompany_a11f134e71efa1f6d16377f722c672f20}\label{classCompany_a11f134e71efa1f6d16377f722c672f20}} 
+\index{Company@{Company}!findBySubDivLabel@{findBySubDivLabel}}
+\index{findBySubDivLabel@{findBySubDivLabel}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{findBySubDivLabel()}{findBySubDivLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLeader}{Leader}} $\ast$ Company\+::find\+By\+Sub\+Div\+Label (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{label }\end{DoxyParamCaption}) const}
+
+
+
+Find subdivision by its label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leader$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCompany_a6ce2daeb1921f6707d53116e3c37e2c0}\label{classCompany_a6ce2daeb1921f6707d53116e3c37e2c0}} 
+\index{Company@{Company}!get@{get}}
+\index{get@{get}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEmployee}{Employee}} $\ast$\& Company\+::get (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+
+
+Get an emloyee pointer reference differs from find~\newline
+ throws an exception if employee with such a code was not found in table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Employee$\ast$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCompany_a93f5ac8caf5531c4c7dad35643077e29}\label{classCompany_a93f5ac8caf5531c4c7dad35643077e29}} 
+\index{Company@{Company}!getLabel@{getLabel}}
+\index{getLabel@{getLabel}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{getLabel()}{getLabel()}}
+{\footnotesize\ttfamily std\+::string const  \& Company\+::get\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Label of company. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string const\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCompany_a34856f6146f97bd3f7a751ba587948ed}\label{classCompany_a34856f6146f97bd3f7a751ba587948ed}} 
+\index{Company@{Company}!remove@{remove}}
+\index{remove@{remove}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Company\+::remove (\begin{DoxyParamCaption}\item[{int}]{code }\end{DoxyParamCaption})}
+
+
+
+Remove employee from table by his id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCompany_af2bf2fcc4c0dfcb369b6967303af0f22}\label{classCompany_af2bf2fcc4c0dfcb369b6967303af0f22}} 
+\index{Company@{Company}!serialize@{serialize}}
+\index{serialize@{serialize}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily std\+::string Company\+::serialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+serializes company to make it writable to file for example 
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCompany_ad5e493129658a67672dc810ef1743a03}\label{classCompany_ad5e493129658a67672dc810ef1743a03}} 
+\index{Company@{Company}!setLabel@{setLabel}}
+\index{setLabel@{setLabel}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{setLabel()}{setLabel()}}
+{\footnotesize\ttfamily void Company\+::set\+Label (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{newlabel }\end{DoxyParamCaption})}
+
+
+
+Set the Label of company. 
+
+\mbox{\Hypertarget{classCompany_ae2311c9b7b429b1443de03405d4c4f05}\label{classCompany_ae2311c9b7b429b1443de03405d4c4f05}} 
+\index{Company@{Company}!show@{show}}
+\index{show@{show}!Company@{Company}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Company\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the entire table to std\+::cout. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Company.\+hpp\item 
+Company.\+cpp\end{DoxyCompactItemize}

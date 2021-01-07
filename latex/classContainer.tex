@@ -1,0 +1,80 @@
+\hypertarget{classContainer}{}\doxysection{Container$<$ Base $>$ Class Template Reference}
+\label{classContainer}\index{Container$<$ Base $>$@{Container$<$ Base $>$}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classContainer_1_1const__iterator}{const\+\_\+iterator}}
+\item 
+class \mbox{\hyperlink{classContainer_1_1iterator}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classContainer_a2c5c0b3aadb43571f797b97b2f07dafc}\label{classContainer_a2c5c0b3aadb43571f797b97b2f07dafc}} 
+using {\bfseries pointer\+\_\+type} = Base $\ast$
+\item 
+\mbox{\Hypertarget{classContainer_a1e94069d6849253ef3034bda815de854}\label{classContainer_a1e94069d6849253ef3034bda815de854}} 
+using {\bfseries pair\+\_\+type} = std\+::pair$<$ int, pointer\+\_\+type $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classContainer_ab781400cf265aed99dfe88ed963951cb}\label{classContainer_ab781400cf265aed99dfe88ed963951cb}} 
+{\bfseries Container} (size\+\_\+t initsize)
+\item 
+\mbox{\Hypertarget{classContainer_a69e56f24d67c64edc81769f725a89beb}\label{classContainer_a69e56f24d67c64edc81769f725a89beb}} 
+{\bfseries Container} (std\+::vector$<$ pair\+\_\+type $>$ const \&its)
+\item 
+\mbox{\Hypertarget{classContainer_a0ea79ae9d1a7cf016b8c49f880d7910b}\label{classContainer_a0ea79ae9d1a7cf016b8c49f880d7910b}} 
+void {\bfseries release} ()
+\item 
+\mbox{\Hypertarget{classContainer_a7a2754424267b55d544f23aebbc87d9a}\label{classContainer_a7a2754424267b55d544f23aebbc87d9a}} 
+size\+\_\+t {\bfseries size} () const
+\item 
+\mbox{\Hypertarget{classContainer_adc0abbd35499262822d9eb0bc305ff73}\label{classContainer_adc0abbd35499262822d9eb0bc305ff73}} 
+size\+\_\+t {\bfseries capacity} () const
+\item 
+\mbox{\Hypertarget{classContainer_ae7c5bc261046c0bdd6c2570c0aa5e525}\label{classContainer_ae7c5bc261046c0bdd6c2570c0aa5e525}} 
+void {\bfseries push\+\_\+back} (pair\+\_\+type item)
+\item 
+\mbox{\Hypertarget{classContainer_ab6f9dd3cb67a1595920b54fe0e2e62f7}\label{classContainer_ab6f9dd3cb67a1595920b54fe0e2e62f7}} 
+pointer\+\_\+type {\bfseries remove} (int code)
+\item 
+\mbox{\Hypertarget{classContainer_aa41a01d8c06a4734284c24cdd3967c75}\label{classContainer_aa41a01d8c06a4734284c24cdd3967c75}} 
+void {\bfseries sort} ()
+\item 
+\mbox{\Hypertarget{classContainer_ad5431b28824cbd340aed9ca05e8b3a8d}\label{classContainer_ad5431b28824cbd340aed9ca05e8b3a8d}} 
+\mbox{\hyperlink{classContainer_1_1iterator}{iterator}} {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{classContainer_a18c7950c5fbf5503e52aae726a147781}\label{classContainer_a18c7950c5fbf5503e52aae726a147781}} 
+\mbox{\hyperlink{classContainer_1_1iterator}{iterator}} {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{classContainer_a563ca424f098f1bb83f63ecc0e9043d9}\label{classContainer_a563ca424f098f1bb83f63ecc0e9043d9}} 
+\mbox{\hyperlink{classContainer_1_1const__iterator}{const\+\_\+iterator}} {\bfseries begin} () const
+\item 
+\mbox{\Hypertarget{classContainer_a49cac277ef4fb949a2f9e1b5e34200c9}\label{classContainer_a49cac277ef4fb949a2f9e1b5e34200c9}} 
+\mbox{\hyperlink{classContainer_1_1const__iterator}{const\+\_\+iterator}} {\bfseries end} () const
+\item 
+\mbox{\Hypertarget{classContainer_a11f9ca551507e958d3e5a7e65d4dd9be}\label{classContainer_a11f9ca551507e958d3e5a7e65d4dd9be}} 
+pointer\+\_\+type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int code)
+\item 
+\mbox{\Hypertarget{classContainer_a57f21f4f1efff3db591697dcbf9f3074}\label{classContainer_a57f21f4f1efff3db591697dcbf9f3074}} 
+pointer\+\_\+type \& {\bfseries at} (int code)
+\item 
+\mbox{\Hypertarget{classContainer_a84cc5e857fc41c37010cb155b4e60a62}\label{classContainer_a84cc5e857fc41c37010cb155b4e60a62}} 
+pointer\+\_\+type {\bfseries at} (int code) const
+\item 
+\mbox{\Hypertarget{classContainer_a292df7dfe77940e1779975bbb919c7a2}\label{classContainer_a292df7dfe77940e1779975bbb919c7a2}} 
+\mbox{\hyperlink{classContainer_1_1iterator}{iterator}} {\bfseries find} (int code)
+\item 
+\mbox{\Hypertarget{classContainer_a059b2ce421be1076a5f591a1ca482994}\label{classContainer_a059b2ce421be1076a5f591a1ca482994}} 
+\mbox{\hyperlink{classContainer_1_1const__iterator}{const\+\_\+iterator}} {\bfseries find} (int code) const
+\item 
+\mbox{\Hypertarget{classContainer_ad4744a53a089833efa075d74d4d0bff7}\label{classContainer_ad4744a53a089833efa075d74d4d0bff7}} 
+void {\bfseries clear} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Container.\+hpp\end{DoxyCompactItemize}
