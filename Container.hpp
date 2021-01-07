@@ -41,7 +41,7 @@ public:
   {
     for (size_t i = 0; i < csize; i++)
       delete items[i].second;
-    delete items;
+    delete[] items;
   }
   void release()
   {
