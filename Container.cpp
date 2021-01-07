@@ -39,7 +39,7 @@ void Container::push_back(std::pair<int, Employee*> item)
     auto newsize  = memsize * 2;
     auto tmpitems = new std::pair<int, Employee*>[newsize];
     std::move(items, items + csize, tmpitems);
-    delete items;
+    delete[] items;
     items   = tmpitems;
     memsize = newsize;
   }
