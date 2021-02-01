@@ -19,7 +19,7 @@ public:
   inline Leader() : subdivision{nullptr} {};
   Leader(std::string const& FIO_, int birthdate_, std::string const& post_,
          std::string const& education_, int salary_, Company* subdivision_);
-  ~Leader();
+  ~Leader() override;
 
   void showInfo() const override;
   std::string serialize() const override;

@@ -238,8 +238,9 @@ public:
     for (auto& keyval : *this)
       if (keyval.first == code)
         return keyval.second;
-    items[csize++] = pair_type{code, nullptr};
-    sort();
+    push_back({code, nullptr});
+    // items[csize++] = pair_type{code, nullptr};
+    // sort();
     return at(code);
   }
   pointer_type& at(int code)
